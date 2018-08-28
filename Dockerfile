@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections \
     && echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
     && apt-get update \
-    && apt-get --yes --no-install-recommends install \
+    && apt-get --yes --no-install-recommends --allow-unauthenticated install \
         locales tzdata sudo \
         ca-certificates apt-transport-https software-properties-common \
         bash-completion iproute2 curl unzip nano tree \
@@ -19,7 +19,7 @@ ENV LANG en_US.UTF-8
 
 # Install supervisord
 RUN apt-get update \
-    && apt-get --yes --no-install-recommends install \
+    && apt-get --yes --no-install-recommends --allow-unauthenticated install \
         supervisor dirmngr \
     && rm -rf /var/lib/apt/lists/*
 
@@ -29,7 +29,7 @@ ENV MYSQL_DEFAULT_PASSWORD uYqBu/41C4Iog4vq9eShKg==
 
 RUN echo "mysql-server-5.7 mysql-server/root_password_again password ${MYSQL_DEFAULT_PASSWORD}" | debconf-set-selections \
     && echo "mysql-server-5.7 mysql-server/root_password password ${MYSQL_DEFAULT_PASSWORD}" | debconf-set-selections \
-    && apt-get update && apt-get install --yes \
+    && apt-get update && apt-get install --yes --no-install-recommends --allow-unauthenticated \
         mysql-server-5.7 \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /var/lib/mysql /var/run/mysqld /var/mysqld/ \
@@ -38,7 +38,7 @@ RUN echo "mysql-server-5.7 mysql-server/root_password_again password ${MYSQL_DEF
 
 # Install NGINX and PHP
 RUN apt-get update \
-    && apt-get install --yes --no-install-recommends \
+    && apt-get install --yes --no-install-recommends --allow-unauthenticated \
         nginx \
         php7.0-fpm \
         php7.0-mbstring php7.0-xml php7.0-curl php7.0-zip php7.0-gd php7.0-mysql \
