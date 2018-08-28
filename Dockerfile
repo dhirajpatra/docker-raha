@@ -9,6 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections \
     && echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
     && apt-get update \
+    && RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
     && apt-get --yes --no-install-recommends install \
         locales tzdata sudo \
         ca-certificates apt-transport-https software-properties-common \

@@ -18,7 +18,7 @@ docker run --interactive --tty \
     --volume /srv/raha/config:/var/www/raha/config \
     --publish 8080:8080 \
     --env MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}" \
-    --env TZ=America/Costa_Rica \
+    --env TZ=Europe/Tallinn \
     --volume /etc/timezone:/etc/timezone:ro \
     --volume /etc/localtime:/etc/localtime:ro \
     dhirajpatra/docker-raha:latest bash

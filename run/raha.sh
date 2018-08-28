@@ -15,7 +15,7 @@ docker stop raha || true
 docker rm raha || true
 
 # Pull the new image
-docker pull kuralabs/docker-raha:latest
+docker pull dhirajpatra/docker-raha:latest
 
 # Run the container
 docker run --detach --init \
@@ -27,7 +27,7 @@ docker run --detach --init \
     --volume /srv/raha/logs:/var/log \
     --volume /srv/raha/config:/var/www/raha/config \
     --env MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}" \
-    --env TZ=America/Costa_Rica \
+    --env TZ=Europe/Tallinn \
     --volume /etc/timezone:/etc/timezone:ro \
     --volume /etc/localtime:/etc/localtime:ro \
-    kuralabs/docker-raha:latest
+    dhirajpatra/docker-raha:latest
