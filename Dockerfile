@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8" | debconf-set-selections \
     && echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
-    && apt-get update \
+    && sudo apt-get update \
+    && sudo apt-get upgrade --allow-unauthenticated \
     && apt-get --yes --no-install-recommends install \
         apt-utils \
         locales tzdata sudo \
