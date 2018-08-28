@@ -21,4 +21,4 @@ docker run --interactive --tty \
     --env TZ=Europe/Tallinn \
     --volume /etc/timezone:/etc/timezone:ro \
     --volume /etc/localtime:/etc/localtime:ro \
-    dhirajpatra/docker-raha:latest bash
+    dhirajpatra/raha:latest bash

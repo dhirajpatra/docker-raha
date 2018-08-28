@@ -15,7 +15,7 @@ docker stop raha || true
 docker rm raha || true
 
 # Pull the new image
-docker pull dhirajpatra/docker-raha:latest
+docker pull dhirajpatra/raha:latest
 
 # Run the container
 docker run --detach --init \
@@ -30,4 +30,4 @@ docker run --detach --init \
     --env TZ=Europe/Tallinn \
     --volume /etc/timezone:/etc/timezone:ro \
     --volume /etc/localtime:/etc/localtime:ro \
-    dhirajpatra/docker-raha:latest
+    dhirajpatra/raha:latest

@@ -12,7 +12,7 @@ raha provides an awesome App Store for users and developers.
 This repository holds the source of the all-in-one raha Docker image
 available at:
 
-- https://hub.docker.com/r/dhirajpatra/docker-raha/
+- https://hub.docker.com/r/dhirajpatra/raha/
 
 
 ## Usage
@@ -37,7 +37,7 @@ docker stop raha || true
 docker rm raha || true
 
 # Pull the new image
-docker pull dhirajpatra/docker-raha:latest
+docker pull dhirajpatra/raha:latest
 
 # Run the container
 docker run --detach --init \
@@ -49,7 +49,7 @@ docker run --detach --init \
     --volume /srv/raha/logs:/var/log \
     --volume /srv/raha/config:/var/www/raha/config \
     --env MYSQL_ROOT_PASSWORD="[YOUR_AWESOME_MYSQL_ROOT_PASSWORD]" \
-    dhirajpatra/docker-raha:latest
+    dhirajpatra/raha:latest
 ```
 
 If you need to set the container to the same time zone as your host machine you
@@ -163,7 +163,7 @@ And change keys to:
 Build me with:
 
 ```
-docker build --tag dhirajpatra/docker-raha:latest .
+docker build --tag dhirajpatra/raha:latest .
 ```
 
 In development, run me with:
