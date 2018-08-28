@@ -2,7 +2,7 @@
 
 ## About
 
-raha is a free, open source and online accounting software designed for
+Raha is a open source and online accounting software designed for
 small businesses and freelancers. It is built with modern technologies such as
 Laravel, Bootstrap, jQuery, RESTful API etc. Thanks to its modular structure,
 raha provides an awesome App Store for users and developers.
